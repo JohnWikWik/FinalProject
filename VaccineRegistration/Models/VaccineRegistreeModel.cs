@@ -8,6 +8,7 @@ namespace VaccineRegistration.Models
     {   
         [Key]
         public int PatientId  { get; set; }
+        [Required]
         public string PatientName { get; set; }
         public string PoB { get; set; }
 

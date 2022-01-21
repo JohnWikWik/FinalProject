@@ -1,0 +1,126 @@
+﻿@model VaccineRegistration.Models.VaccineRegistreeModel
+@{
+    ViewData["Title"] = "Register Page";
+}
+
+
+    <div class="row text-center">
+        <div class="col-md-6 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Register</h1>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Register">
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="PatientName" class="control-label">Patient Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" asp-for="PatientName" class="form-control" />
+                            </div>
+                            <span asp-validation-for="PatientName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="PoB" class="control-label">Place of Birth</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" asp-for="PoB" class="form-control" />
+                            </div>
+                            <span asp-validation-for="PoB" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="DoB" class="control-label">Date of Birth</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="date" asp-for="DoB" class="form-control" />
+                            </div>
+                            <span asp-validation-for="DoB" class="text-danger"></span>
+                        </div>
+
+                         <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="NIK" class="control-label">NIK</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" asp-for="NIK" class="form-control" />
+                            </div>
+                            <span asp-validation-for="NIK" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="Address" class="control-label"></label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" asp-for="Address" class="form-control" />
+                            </div>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="Province" class="control-label"></label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" asp-for="Province" class="form-control" />
+                            </div>
+                            <span asp-validation-for="Province" class="text-danger"></span>
+                        </div>
+
+                         <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="City" class="control-label"></label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" asp-for="City" class="form-control" />
+                            </div>
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="VaccineType" class="control-label">Vaccine Type</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" asp-for="VaccineType" class="form-control" />
+                            </div>
+                            <span asp-validation-for="VaccineType" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="VaccineDose" class="control-label">Vaccine Dose</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" asp-for="VaccineDose" class="form-control" />
+                            </div>
+                            <span asp-validation-for="VaccineDose" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label asp-for="VaccineDate" class="control-label">Vaccine Date</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="date" asp-for="VaccineDate" class="form-control" />
+                            </div>
+                            <span asp-validation-for="VaccineDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Register" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="text-danger"><p>@ViewBag.Msg</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
