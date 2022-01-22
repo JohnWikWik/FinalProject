@@ -22,9 +22,16 @@ namespace VaccineRegistration.Controllers
 
         public async Task<IActionResult> Register([Bind("PatientId, PatientName, PoB, DoB, NIK, Address, Province, City, VaccineType, VaccineDose, VaccineDate")] VaccineRegistreeModel vaccineRegistree)
         {
-            _context.Add(vaccineRegistree);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Register));
+            if (ModelState.IsValid)
+            {
+                _context.Add(vaccineRegistree);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Register));
+            }
+            else
+            {
+                return View();
+            }
         }
        
     }
