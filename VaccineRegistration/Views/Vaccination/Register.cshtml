@@ -4,29 +4,30 @@
 }
 
 
-    <div class="row text-center">
-        <div class="col-md-6 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
-            <div class="card">
-                <div class="card-header bg-primary text-white">
-                    <h5>Vaccine Registration</h5>
-                </div>
-                <p class="text-secondary font-weight-bold mt-4">Page 1 of 2</p>
-                <div class="card-body px-5">
-                    <form asp-action="Register">
+<div class="row text-center">
+    <div class="col-md-6 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5>Vaccine Registration</h5>
+            </div>
+            <p class="text-secondary font-weight-bold mt-4">Page 1 of 2</p>
+            <div class="card-body px-5">
+                <form asp-action="Register">
 
-                        <div class="form-group row">
+                    <div class="form-group row">
 
-                            <label asp-for="PatientName" class="control-label font-weight-bold">Patient Name</label>
+                        <label asp-for="PatientName" class="control-label font-weight-bold">Patient Name</label>
 
-                            <input type="text" asp-for="PatientName" class="form-control" />
+                        <input type="text" asp-for="PatientName" class="form-control" />
 
-                            <span asp-validation-for="PatientName" class="text-danger"></span>
-                        </div>
+                        <span asp-validation-for="PatientName" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group row">
+                    <div class="form-group row">
 
-                            <label asp-for="PoB" class="control-label font-weight-bold">Place of Birth</label>
+                        <label asp-for="PoB" class="control-label font-weight-bold">Place of Birth</label>
 
+<<<<<<< Updated upstream
                             <select type="text" asp-for="PoB" class="form-control">
 
                                         <option value="Jawa Barat">Jawa Barat</option>
@@ -37,20 +38,28 @@
                                         <option value="Banten">Banten</option>
 
                             </select>
+=======
+                        <select type="text" asp-for="PoB" class="form-control" />
+>>>>>>> Stashed changes
 
 
-                            <span asp-validation-for="PoB" class="text-danger"></span>
-                        </div>
+                        <span asp-validation-for="PoB" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group row">
+                    <div class="form-group row">
 
-                            <label asp-for="DoB" class="control-label font-weight-bold">Date of Birth</label>
+                        <label asp-for="DoB" class="control-label font-weight-bold">Date of Birth</label>
 
+<<<<<<< Updated upstream
                             <input type="date" asp-for="DoB" class="form-control" placeholder="11/10/2001"/>
+=======
+                        <input type="date" asp-for="DoB" class="form-control" />
+>>>>>>> Stashed changes
 
-                            <span asp-validation-for="DoB" class="text-danger"></span>
-                        </div>
+                        <span asp-validation-for="DoB" class="text-danger"></span>
+                    </div>
 
+<<<<<<< Updated upstream
                          <div class="form-group row">
                             
                                 <label asp-for="NIK" class="control-label font-weight-bold">NIK</label>
@@ -60,22 +69,30 @@
                                 <span asp-validation-for="NIK" class="text-danger"></span>
                         
                         </div>
+=======
+                    <div class="form-group row">
+>>>>>>> Stashed changes
 
-                        <div class="form-group row">
+                        <label asp-for="NIK" class="control-label font-weight-bold">NIK</label>
 
-                            <label asp-for="Address" class="control-label font-weight-bold"></label>
+                        <input type="number" asp-for="NIK" class="form-control" placeholder="Enter 16-Digit NIK Number" />
 
-                            <input type="text" asp-for="Address" class="form-control" placeholder="Enter Address" />
+                    </div>
 
-                            <span asp-validation-for="Address" class="text-danger"></span>
-                        </div>
+                    <div class="form-group row">
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group row">
+                        <label asp-for="Address" class="control-label font-weight-bold"></label>
 
-                                    <label asp-for="Province" class="control-label font-weight-bold"></label>
+                        <input type="text" asp-for="Address" class="form-control" placeholder="Enter Address" />
 
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group row">
+
+<<<<<<< Updated upstream
                                     <select asp-for="Province" class="form-control">
                                         
                                         <option value="Jawa Barat">Jawa Barat</option>
@@ -89,12 +106,21 @@
                                     
                                 <span asp-validation-for="Province" class="text-danger"></span>
                                 </div>
+=======
+                                <label asp-for="Province" class="control-label font-weight-bold"></label>
+
+                                <input type="text" asp-for="Province" class="form-control" />
+
+                                <span asp-validation-for="Province" class="text-danger"></span>
+>>>>>>> Stashed changes
                             </div>
-                            <div class="col ml-3">
-                                <div class="form-group row">
+                        </div>
+                        <div class="col ml-3">
+                            <div class="form-group row">
 
-                                    <label asp-for="City" class="control-label font-weight-bold"></label>
+                                <label asp-for="City" class="control-label font-weight-bold"></label>
 
+<<<<<<< Updated upstream
                                     <select asp-for="City" class="form-control" />
 
                                     --> Jawa Barat
@@ -143,56 +169,59 @@
                                     <option value="Cilegon">Cilegon</option>
 
                                     </select>
+=======
+                                <input type="text" asp-for="City" class="form-control" />
+>>>>>>> Stashed changes
 
-                                    <span asp-validation-for="City" class="text-danger"></span>
-                                </div>
+                                <span asp-validation-for="City" class="text-danger"></span>
                             </div>
                         </div>
-
-                        
-
-                        <div class="form-group row">
-
-                            <label asp-for="VaccineType" class="control-label font-weight-bold">Vaccine Type</label>
-
-                            <select asp-for="VaccineType" class="form-control">
-
-                                <option value="Sinovac">Sinovac</option>
-                                <option value="Astra Zeneca">Astra Zeneca</option>
-                                <option value="Sinopharm">Sinopharm</option>
-
-                            </select>
+                    </div>
 
 
-                            <span asp-validation-for="VaccineType" class="text-danger"></span>
-                        </div>
 
-                        <div class="form-group row">
+                    <div class="form-group row">
 
-                            <label asp-for="VaccineDose" class="control-label font-weight-bold">Vaccine Dose</label>
+                        <label asp-for="VaccineType" class="control-label font-weight-bold">Vaccine Type</label>
 
-                            <select asp-for="VaccineDose" class="form-control">
-                                <option value="1st Dose">1st Dose</option>
-                                <option value="2nd Dose">2nd Dose</option>
-                            </select>
+                        <select asp-for="VaccineType" class="form-control">
 
-                            <span asp-validation-for="VaccineDose" class="text-danger"></span>
-                        </div>
+                            <option value="Sinovac">Sinovac</option>
+                            <option value="Astra Zeneca">Astra Zeneca</option>
+                            <option value="Sinopharm">Sinopharm</option>
 
-                        <div class="form-group row">
+                        </select>
 
-                            <label asp-for="VaccineDate" class="control-label font-weight-bold">Vaccine Date</label>
 
-                            <input type="date" asp-for="VaccineDate" class="form-control" />
+                        <span asp-validation-for="VaccineType" class="text-danger"></span>
+                    </div>
 
-                            <span asp-validation-for="VaccineDate" class="text-danger"></span>
-                        </div>
+                    <div class="form-group row">
 
-                        <div class="form-group d-flex justify-content-end">
-                            <input type="submit" value="Register" class="btn btn-primary" />
-                        </div>
-                    </form>
-                </div>
+                        <label asp-for="VaccineDose" class="control-label font-weight-bold">Vaccine Dose</label>
+
+                        <select asp-for="VaccineDose" class="form-control">
+                            <option value="1st Dose">1st Dose</option>
+                            <option value="2nd Dose">2nd Dose</option>
+                        </select>
+
+                        <span asp-validation-for="VaccineDose" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group row">
+
+                        <label asp-for="VaccineDate" class="control-label font-weight-bold">Vaccine Date</label>
+
+                        <input type="date" asp-for="VaccineDate" class="form-control" />
+
+                        <span asp-validation-for="VaccineDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group d-flex justify-content-end">
+                        <input type="submit" value="Register" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
