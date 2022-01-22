@@ -27,7 +27,16 @@
 
                             <label asp-for="PoB" class="control-label font-weight-bold">Place of Birth</label>
 
-                            <input type="text" asp-for="PoB" class="form-control" />
+                            <select type="text" asp-for="PoB" class="form-control">
+
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Sumatera Utara">Sumatera Utara</option>
+                                        <option value="Banten">Banten</option>
+
+                            </select>
 
 
                             <span asp-validation-for="PoB" class="text-danger"></span>
@@ -65,9 +74,18 @@
 
                                     <label asp-for="Province" class="control-label font-weight-bold"></label>
 
-                                    <input type="text" asp-for="Province" class="form-control" />
-
-                                    <span asp-validation-for="Province" class="text-danger"></span>
+                                    <select asp-for="Province" class="form-control">
+                                        
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Sumatera Utara">Sumatera Utara</option>
+                                        <option value="Banten">Banten</option>
+                                        
+                                    </select>
+                                    
+                                <span asp-validation-for="Province" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col ml-3">
@@ -75,7 +93,54 @@
 
                                     <label asp-for="City" class="control-label font-weight-bold"></label>
 
-                                    <input type="text" asp-for="City" class="form-control" />
+                                    <select asp-for="City" class="form-control" />
+
+                                    --> Jawa Barat
+                                    <option value="Bekasi">Bekasi</option>
+                                    <option value="Bandung">Bandung</option>
+                                    <option value="Depok">Depok</option>
+                                    <option value="Bogor">Bogor</option>
+                                    <option value="Tasikmalaya">Tasikmalaya</option>
+                                    <option value="Cimahi">Cimahi</option>
+
+                                    --> Jawa Timur
+                                    <option value="Surabaya">Surabaya</option>
+                                    <option value="Malang">Malang</option>
+                                    <option value="Kediri">Kediri</option>
+                                    <option value="Batu">Batu</option>
+                                    <option value="Pasuruan">Pasuruan</option>
+                                    <option value="Mojokerto">Mojokerto</option>
+
+                                    --> Jawa Tengah
+                                    <option value="Semarang">Semarang</option>
+                                    <option value="Surakarta">Surakarta</option>
+                                    <option value="Pekalongan">Pekalongan</option>
+                                    <option value="Tegal">Tegal</option>
+                                    <option value="Salatiga">Salatiga</option>
+                                    <option value="Magelang">Magelang</option>
+
+                                    --> Sumatra Utara
+                                    <option value="Medan">Medan</option>
+                                    <option value="Pematangsiantar">Pematangsiantar</option>
+                                    <option value="Binjai">Binjai</option>
+                                    <option value="Padang Sidempuan">Padang Sidempuan</option>
+                                    <option value="Tebing Tinggi">Tebing Tinggi</option>
+                                    <option value="Tanjungbalai">Tanjungbalai</option>
+
+                                    --> DKI JAKARTA
+                                    <option value="Jakarta Timur">Jakarta Timur</option>
+                                    <option value="Jakarta Barat">Jakarta Barat</option>
+                                    <option value="Jakarta Pusat">Jakarta Pusat</option>
+                                    <option value="Jakarta Selatan">Jakarta Selatan</option>
+                                    <option value="Jakarta Utara">Jakarta Utara</option>
+
+                                    --> Banten
+                                    <option value="Tangerang">Tangerang</option>
+                                    <option value="Tangerang Selatan">Tangerang Selatan</option>
+                                    <option value="Serang">Serang</option>
+                                    <option value="Cilegon">Cilegon</option>
+
+                                    </select>
 
                                     <span asp-validation-for="City" class="text-danger"></span>
                                 </div>
@@ -88,7 +153,12 @@
 
                             <label asp-for="VaccineType" class="control-label font-weight-bold">Vaccine Type</label>
 
-                            <select type="text" asp-for="VaccineType" class="form-control">
+                            <select asp-for="VaccineType" class="form-control">
+
+                                <option value="Sinovac">Sinovac</option>
+                                <option value="Astra Zeneca">Astra Zeneca</option>
+                                <option value="Sinopharm">Sinopharm</option>
+
                             </select>
 
 
@@ -99,7 +169,10 @@
 
                             <label asp-for="VaccineDose" class="control-label font-weight-bold">Vaccine Dose</label>
 
-                            <input type="text" asp-for="VaccineDose" class="form-control" />
+                            <select asp-for="VaccineDose" class="form-control">
+                                <option value="1st Dose">1st Dose</option>
+                                <option value="2nd Dose">2nd Dose</option>
+                            </select>
 
                             <span asp-validation-for="VaccineDose" class="text-danger"></span>
                         </div>
