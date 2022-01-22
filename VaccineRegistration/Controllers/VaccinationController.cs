@@ -18,6 +18,10 @@ namespace VaccineRegistration.Controllers
         {
             return View();
         }
+        public IActionResult Register2()
+        {
+            return View();
+        }
 
         [HttpPost]
 
@@ -28,7 +32,7 @@ namespace VaccineRegistration.Controllers
             {
                 _context.Add(vaccineRegistree);
                 await _context.SaveChangesAsync();
-                var patientId = HttpContext.Session.GetInt32("PatientId");
+                var patientId = vaccineRegistree.PatientId;
                 return View(Quesionaire(patientId));
             }
             else
