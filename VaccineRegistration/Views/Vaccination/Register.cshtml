@@ -27,7 +27,16 @@
 
                             <label asp-for="PoB" class="control-label font-weight-bold">Place of Birth</label>
 
-                            <select type="text" asp-for="PoB" class="form-control" />
+                            <select type="text" asp-for="PoB" class="form-control">
+
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Sumatera Utara">Sumatera Utara</option>
+                                        <option value="Banten">Banten</option>
+
+                            </select>
 
 
                             <span asp-validation-for="PoB" class="text-danger"></span>
@@ -65,9 +74,18 @@
 
                                     <label asp-for="Province" class="control-label font-weight-bold"></label>
 
-                                    <input type="text" asp-for="Province" class="form-control" />
-
-                                    <span asp-validation-for="Province" class="text-danger"></span>
+                                    <select asp-for="Province" class="form-control">
+                                        
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Sumatera Utara">Sumatera Utara</option>
+                                        <option value="Banten">Banten</option>
+                                        
+                                    </select>
+                                    
+                                <span asp-validation-for="Province" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col ml-3">
@@ -75,7 +93,10 @@
 
                                     <label asp-for="City" class="control-label font-weight-bold"></label>
 
-                                    <input type="text" asp-for="City" class="form-control" />
+                                    <select asp-for="City" class="form-control" >
+                                    
+
+                                    </select>
 
                                     <span asp-validation-for="City" class="text-danger"></span>
                                 </div>
