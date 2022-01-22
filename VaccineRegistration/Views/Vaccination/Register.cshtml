@@ -28,7 +28,8 @@
                                 <label asp-for="PoB" class="control-label">Place of Birth</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" asp-for="PoB" class="form-control" />
+                                <input type="text" asp-for="PoB" class="form-control"/>
+
                             </div>
                             <span asp-validation-for="PoB" class="text-danger"></span>
                         </div>
@@ -48,7 +49,7 @@
                                 <label asp-for="NIK" class="control-label">NIK</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" asp-for="NIK" class="form-control" />
+                                <input type="text" asp-for="NIK" class="form-control" placeholder="Enter 16-Digit NIK Number" />
                             </div>
                             <span asp-validation-for="NIK" class="text-danger"></span>
                         </div>
@@ -58,7 +59,7 @@
                                 <label asp-for="Address" class="control-label"></label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" asp-for="Address" class="form-control" />
+                                <input type="text" asp-for="Address" class="form-control" placeholder="Enter Address"/>
                             </div>
                             <span asp-validation-for="Address" class="text-danger"></span>
                         </div>
@@ -88,7 +89,10 @@
                                 <label asp-for="VaccineType" class="control-label">Vaccine Type</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" asp-for="VaccineType" class="form-control" />
+                                <select type="text" asp-for="VaccineType" class="form-control">
+
+                                </select>
+                        
                             </div>
                             <span asp-validation-for="VaccineType" class="text-danger"></span>
                         </div>
