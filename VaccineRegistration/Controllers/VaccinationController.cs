@@ -18,11 +18,7 @@ namespace VaccineRegistration.Controllers
         {
             return View();
         }
-        public IActionResult Register2()
-        {
-            return View();
-        }
-
+     
         [HttpPost]
 
         public async Task<IActionResult> Register([Bind("PatientId, PatientName, PoB, DoB, NIK, Address, Province, City, VaccineType, VaccineDose, VaccineDate")] VaccineRegistreeModel vaccineRegistree)
@@ -32,7 +28,7 @@ namespace VaccineRegistration.Controllers
             {
                 _context.Add(vaccineRegistree);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Quesionaire));
+                return RedirectToAction(nameof(Ques));
             }
             else
             {
@@ -40,21 +36,21 @@ namespace VaccineRegistration.Controllers
             }
         }
 
-        public IActionResult Quesionaire()
+        public IActionResult Ques()
         {
             return View();
         }
 
         [HttpPost]
 
-        public async Task<IActionResult> Questionaire([Bind("Id, PatientId, isAllergies, isAutoimune, isImmunosuppresant, isHeartdisease, isDiabetes, isHypertension, isCovid")] AnswerModel answerModel)
+        public async Task<IActionResult> Ques([Bind("Id, PatientId, isAllergies, isAutoimmune, isMedication, isImmunosuppressant, isHeartdisease, isDiabetes, isHypertension, isCovid")] AnswerModel answerModel)
         {
 
             if (ModelState.IsValid)
             {
                 _context.Add(answerModel);
                 await _context.SaveChangesAsync();
-                return Redirect("/Home/Index");
+                return RedirectToAction(nameof(Register));
             }
             else
             {

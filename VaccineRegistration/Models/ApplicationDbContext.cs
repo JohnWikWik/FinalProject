@@ -14,5 +14,6 @@ namespace VaccineRegistration.Models
 
         }
         public DbSet<VaccineRegistreeModel> Patient { get; set; }
+        public DbSet<AnswerModel> Questionaire { get; set; }
     }
 }
