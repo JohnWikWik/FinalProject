@@ -32,8 +32,7 @@ namespace VaccineRegistration.Controllers
             {
                 _context.Add(vaccineRegistree);
                 await _context.SaveChangesAsync();
-                var patientId = vaccineRegistree.PatientId;
-                return View(Quesionaire(patientId));
+                return RedirectToAction(nameof(Quesionaire));
             }
             else
             {
@@ -41,7 +40,7 @@ namespace VaccineRegistration.Controllers
             }
         }
 
-        public IActionResult Quesionaire(int? PatientId)
+        public IActionResult Quesionaire()
         {
             return View();
         }
@@ -55,7 +54,7 @@ namespace VaccineRegistration.Controllers
             {
                 _context.Add(answerModel);
                 await _context.SaveChangesAsync();
-                return View();
+                return Redirect("/Home/Index");
             }
             else
             {
