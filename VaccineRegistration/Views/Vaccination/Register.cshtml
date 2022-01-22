@@ -27,7 +27,7 @@
 
                             <label asp-for="PoB" class="control-label font-weight-bold">Place of Birth</label>
 
-                            <input type="text" asp-for="PoB" class="form-control" />
+                            <select type="text" asp-for="PoB" class="form-control" />
 
 
                             <span asp-validation-for="PoB" class="text-danger"></span>
@@ -88,7 +88,12 @@
 
                             <label asp-for="VaccineType" class="control-label font-weight-bold">Vaccine Type</label>
 
-                            <select type="text" asp-for="VaccineType" class="form-control">
+                            <select asp-for="VaccineType" class="form-control">
+
+                                <option value="Sinovac">Sinovac</option>
+                                <option value="Astra Zeneca">Astra Zeneca</option>
+                                <option value="Sinopharm">Sinopharm</option>
+
                             </select>
 
 
@@ -99,7 +104,10 @@
 
                             <label asp-for="VaccineDose" class="control-label font-weight-bold">Vaccine Dose</label>
 
-                            <input type="text" asp-for="VaccineDose" class="form-control" />
+                            <select asp-for="VaccineDose" class="form-control">
+                                <option value="1st Dose">1st Dose</option>
+                                <option value="2nd Dose">2nd Dose</option>
+                            </select>
 
                             <span asp-validation-for="VaccineDose" class="text-danger"></span>
                         </div>
