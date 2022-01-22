@@ -16,7 +16,7 @@ namespace VaccineRegistration.Models
         public string PoB { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/mm/yyyy}")]
         public DateTime DoB { get; set; }
 
         [Required]
@@ -41,5 +41,7 @@ namespace VaccineRegistration.Models
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime VaccineDate { get; set; }
+
+        public AnswerModel AnswerModel { get; set; }
     }
 }
