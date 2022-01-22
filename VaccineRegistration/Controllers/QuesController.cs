@@ -4,30 +4,30 @@ using VaccineRegistration.Models;
 
 namespace VaccineRegistration.Controllers
 {
-    public class VaccinationController : Controller
+    public class QuesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public VaccinationController(ApplicationDbContext context)
+        public QuesController(ApplicationDbContext context)
         {
             _context = context;
         }
-
-        public IActionResult Register()
+        public IActionResult Ques()
         {
             return View();
         }
-     
+
+
         [HttpPost]
 
-        public async Task<IActionResult> Register([Bind("PatientId, PatientName, PoB, DoB, NIK, Address, Province, City, VaccineType, VaccineDose, VaccineDate")] VaccineRegistreeModel vaccineRegistree)
+        public async Task<IActionResult> Ques([Bind("Id, PatientId, isAllergies, isAutoimmune, isMedication, isImmunosuppressant, isHeartdisease, isDiabetes, isHypertension, isCovid")] AnswerModel answerModel)
         {
-           
+
             if (ModelState.IsValid)
             {
-                _context.Add(vaccineRegistree);
+                _context.Add(answerModel);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Ques", "Ques");
+                return RedirectToAction(nameof(answerModel));
             }
             else
             {
