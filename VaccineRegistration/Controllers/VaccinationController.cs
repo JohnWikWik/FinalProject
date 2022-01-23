@@ -53,7 +53,7 @@ namespace VaccineRegistration.Controllers
             { 
                 _context.Add(answerModel);
                 await _context.SaveChangesAsync();
-                return View(answerModel);
+                return RedirectToAction("Index", "Home");
             }
             else
             {
