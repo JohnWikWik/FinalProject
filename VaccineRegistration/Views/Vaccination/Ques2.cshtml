@@ -110,6 +110,11 @@
                         <input type="submit" value="Ques" class="btn btn-primary" />
                     </div>
                 </form>
+
+                <form asp-action="BackButton">
+                        <input type="hidden" asp-for="PatientId" value="@Model.PatientId"/>
+                        <input type="submit" value="back"/>
+                </form>
             </div>
         </div>
     </div>
