@@ -40,8 +40,8 @@ namespace VaccineRegistration.Models
 
         
         [DataType(DataType.Date)]
-        
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [IsGreaterDate(ErrorMessage = "Vaccine date must be greater than current date")]
         public DateTime VaccineDate { get; set; }
 
         public AnswerModel AnswerModel { get; set; }
