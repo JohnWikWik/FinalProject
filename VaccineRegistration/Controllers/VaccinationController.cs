@@ -99,18 +99,57 @@ namespace VaccineRegistration.Controllers
                 new DataColumn("City"),
                 new DataColumn("VaccineType"),
                 new DataColumn("VaccineDose"),
-                new DataColumn("VaccineDate")
+                new DataColumn("VaccineDate"),
+                new DataColumn("isAllergies"),
+                new DataColumn("isAutoimmune"),
+                new DataColumn("isMedication"),
+                new DataColumn("isImmunosuppressant"),
+                new DataColumn("isHeartdisease"),
+                new DataColumn("isDiabetes"),
+                new DataColumn("isHypertension"),
+                new DataColumn("isCovid")
             });
 
-            var patients = from patient in _context.Patient.Take(10) select patient;
-
-            foreach (var patient in patients)
+            //   var patients = from patient in _context.Patient.Take(10) select patient;
+            //   var questionaires = from questionaire in _context.Questionaire.Take(10) select questionaire;
+            var Registration = from p in _context.Patient join q in _context.Questionaire on p.PatientId equals q.PatientId select new 
             {
-                regis.Rows.Add(patient.PatientId, patient.PatientName, patient.PoB, patient.DoB, patient.NIK
-                    , patient.Address, patient.Province, patient.City, patient.VaccineType
-                    , patient.VaccineDose, patient.VaccineDate);
+                PatientId = p.PatientId,
+                PatientName = p.PatientName,
+                PoB = p.PoB,
+                DoB = p.DoB,
+                NIK = p.NIK,
+                Address = p.Address,
+                Province = p.Province,
+                City = p.City,
+                VaccineType = p.VaccineType,
+                VaccineDose = p.VaccineDose,
+                VaccineDate = p.VaccineDate,
+                Allergy = q.isAllergies,
+                Autoimmune = q.isAutoimmune,
+                Medication = q.isMedication,
+                Immunosuppresant = q.isImmunosuppressant,
+                HeartDisease = q.isHeartdisease,
+                Diabetes = q.isDiabetes,
+                Hypertension = q.isHypertension,
+                Covid = q.isCovid
+            };
+            
+    
+            foreach (var p in Registration)
+            {
+                regis.Rows.Add(p.PatientId, p.PatientName, p.PoB, p.DoB, p.NIK
+                    , p.Address, p.Province, p.City, p.VaccineType
+                    , p.VaccineDose, p.VaccineDate, p.Allergy, p.Autoimmune, p.Medication, p.Immunosuppresant, p.HeartDisease, p.Diabetes, p.Hypertension, p.Covid);
             }
-
+           
+            /*
+            foreach (var q in Registration)
+            {
+                regis.Rows.Add(q.Allergy, q.Autoimmune, q.Medication, q.Immunosuppresant, q.HeartDisease, q.Diabetes, q.Hypertension, q.Covid);
+            }
+            */
+            
             using (XLWorkbook wb = new XLWorkbook())
             {
                 wb.Worksheets.Add(regis);
@@ -121,8 +160,8 @@ namespace VaccineRegistration.Controllers
                 }
             }
         }
-
-
+        
+        /*
         [HttpPost]
         public IActionResult ExportQues()
         {
@@ -161,7 +200,7 @@ namespace VaccineRegistration.Controllers
                     }
                 }
             }
-        }
+        }*/
 
 
     }
