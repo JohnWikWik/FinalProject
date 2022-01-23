@@ -1,0 +1,199 @@
+@model VaccineRegistration.Models.VaccineRegistreeModel
+@{
+    ViewData["Title"] = "Register Page";
+}
+
+@Html.HiddenFor(VaccineRegistration => VaccineRegistration.PatientId)
+
+    <div class="row text-center">
+        <div class="col-md-5 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5>Vaccine Registration</h5>
+                </div>
+                <p class="text-secondary fw-bold mt-4">Page 1 of 2</p>
+                <div class="card-body px-5">
+                    <form asp-action="UpdateData">
+
+                         <input type="hidden" asp-for="PatientId" value="@Model.PatientId"/>
+                        <div class="form-group row mb-3">
+
+                            <label asp-for="PatientName" class="control-label text-start fw-bold text-start">Patient Name</label>
+
+                            <input type="text" asp-for="PatientName" class="form-control" />
+
+                            <span asp-validation-for="PatientName" class="text-danger text-start text-start"></span>
+                        </div>
+
+                        <div class="form-group row mb-3">
+
+                            <label asp-for="PoB" class="control-label text-start fw-bold">Place of Birth</label>
+
+                            <select type="text" asp-for="PoB" class="form-control">
+
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Sumatera Utara">Sumatera Utara</option>
+                                        <option value="Banten">Banten</option>
+
+                            </select>
+
+
+                            <span asp-validation-for="PoB" class="text-danger text-start"></span>
+                        </div>
+
+                        <div class="form-group row mb-3">
+
+                            <label asp-for="DoB" class="control-label text-start fw-bold">Date of Birth</label>
+
+                            <input type="date" asp-for="DoB" class="form-control" placeholder="11/10/2001"/>
+
+                            <span asp-validation-for="DoB" class="text-danger text-start"></span>
+                        </div>
+
+                         <div class="form-group row mb-3">
+                            
+                                <label asp-for="NIK" class="control-label text-start fw-bold">NIK</label>
+                            
+                                <input type="number" asp-for="NIK" class="form-control" placeholder="Enter 16-Digit NIK Number" />
+                        
+                        </div>
+
+                        <div class="form-group row mb-3">
+
+                            <label asp-for="Address" class="control-label text-start fw-bold"></label>
+
+                            <input type="text" asp-for="Address" class="form-control" placeholder="Enter Address" />
+
+                            <span asp-validation-for="Address" class="text-danger text-start"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group row mb-3">
+
+                                    <label asp-for="Province" class="control-label text-start fw-bold"></label>
+
+                                    <select asp-for="Province" class="form-control">
+                                        
+                                        <option value="Jawa Barat">Jawa Barat</option>
+                                        <option value="Jawa Timur">Jawa Timur</option>
+                                        <option value="Jawa Tengah">Jawa Tengah</option>
+                                        <option value="DKI Jakarta">DKI Jakarta</option>
+                                        <option value="Sumatera Utara">Sumatera Utara</option>
+                                        <option value="Banten">Banten</option>
+                                        
+                                    </select>
+                                    
+                                <span asp-validation-for="Province" class="text-danger text-start"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row mb-3">
+
+                                    <label asp-for="City" class="control-label text-start fw-bold"></label>
+
+                                   <select asp-for="City" class="form-control">
+
+                                
+                                        --> Jawa Barat
+                                        <option value="Bekasi">Bekasi</option>
+                                        <option value="Bandung">Bandung</option>
+                                        <option value="Depok">Depok</option>
+                                        <option value="Bogor">Bogor</option>
+                                        <option value="Tasikmalaya">Tasikmalaya</option>
+                                        <option value="Cimahi">Cimahi</option>
+
+                                        --> Jawa Timur
+                                        <option value="Surabaya">Surabaya</option>
+                                        <option value="Malang">Malang</option>
+                                        <option value="Kediri">Kediri</option>
+                                        <option value="Batu">Batu</option>
+                                        <option value="Pasuruan">Pasuruan</option>
+                                        <option value="Mojokerto">Mojokerto</option>
+
+                                        --> Jawa Tengah
+                                        <option value="Semarang">Semarang</option>
+                                        <option value="Surakarta">Surakarta</option>
+                                        <option value="Pekalongan">Pekalongan</option>
+                                        <option value="Tegal">Tegal</option>
+                                        <option value="Salatiga">Salatiga</option>
+                                        <option value="Magelang">Magelang</option>
+
+                                        --> Sumatra Utara
+                                        <option value="Medan">Medan</option>
+                                        <option value="Pematangsiantar">Pematangsiantar</option>
+                                        <option value="Binjai">Binjai</option>
+                                        <option value="Padang Sidempuan">Padang Sidempuan</option>
+                                        <option value="Tebing Tinggi">Tebing Tinggi</option>
+                                        <option value="Tanjungbalai">Tanjungbalai</option>
+
+                                        --> DKI JAKARTA
+                                        <option value="Jakarta Timur">Jakarta Timur</option>
+                                        <option value="Jakarta Barat">Jakarta Barat</option>
+                                        <option value="Jakarta Pusat">Jakarta Pusat</option>
+                                        <option value="Jakarta Selatan">Jakarta Selatan</option>
+                                        <option value="Jakarta Utara">Jakarta Utara</option>
+
+                                        --> Banten
+                                        <option value="Tangerang">Tangerang</option>
+                                        <option value="Tangerang Selatan">Tangerang Selatan</option>
+                                        <option value="Serang">Serang</option>
+                                        <option value="Cilegon">Cilegon</option>
+
+                                    </select>
+
+                                    <span asp-validation-for="City" class="text-danger text-start"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="form-group row mb-3">
+
+                            <label asp-for="VaccineType" class="control-label text-start fw-bold">Vaccine Type</label>
+
+                            <select asp-for="VaccineType" class="form-control">
+
+                                <option value="Sinovac">Sinovac</option>
+                                <option value="Astra Zeneca">Astra Zeneca</option>
+                                <option value="Sinopharm">Sinopharm</option>
+
+                            </select>
+
+
+                            <span asp-validation-for="VaccineType" class="text-danger text-start"></span>
+                        </div>
+
+                        <div class="form-group row mb-3">
+
+                            <label asp-for="VaccineDose" class="control-label text-start fw-bold">Vaccine Dose</label>
+
+                            <select asp-for="VaccineDose" class="form-control">
+                                <option value="1st Dose">1st Dose</option>
+                                <option value="2nd Dose">2nd Dose</option>
+                            </select>
+
+                            <span asp-validation-for="VaccineDose" class="text-danger text-start"></span>
+                        </div>
+
+                        <div class="form-group row mb-3">
+
+                            <label asp-for="VaccineDate" class="control-label text-start fw-bold">Vaccine Date</label>
+
+                            <input type="date" asp-for="VaccineDate" class="form-control" />
+
+                            <span asp-validation-for="VaccineDate" class="text-danger text-start"></span>
+                        </div>
+
+                        <div class="form-group d-flex justify-content-end">
+                            <input type="submit" value="Register" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

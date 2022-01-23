@@ -84,6 +84,56 @@ namespace VaccineRegistration.Controllers
         }
 
 
+        //backbutton pharsing PatientId
+        public async Task<IActionResult> BackButton([Bind("Id, PatientId, isAllergies, isAutoimmune, isMedication, isImmunosuppressant, isHeartdisease, isDiabetes, isHypertension, isCovid")] AnswerModel answerModel)
+        {
+            _context.Add(answerModel);
+                //await _context.SaveChangesAsync();
+            var PatientId = answerModel.PatientId;
+            return RedirectToAction("RegisterUpdate", new { PatientId = PatientId });
+        }
+
+        public IActionResult RegisterUpdate(int PatientId)
+        {
+            VaccineRegistreeModel regis = new VaccineRegistreeModel();
+            regis.PatientId = PatientId;
+            return View(regis);
+        }
+
+
+
+        [HttpPost]
+
+        public async Task<IActionResult> UpdateData([Bind("PatientId, PatientName, PoB, DoB, NIK, Address, Province, City, VaccineType, VaccineDose, VaccineDate")] VaccineRegistreeModel vaccineRegistree)
+        {
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(vaccineRegistree);
+                await _context.SaveChangesAsync();
+                var PatientId = vaccineRegistree.PatientId;
+                var VaccineDose = vaccineRegistree.VaccineDose;
+                if (VaccineDose.Equals("1st Dose"))
+                {
+                    return RedirectToAction("Ques", new { PatientId = PatientId });
+                }
+                else
+                {
+                    return RedirectToAction("Ques2", new { PatientId = PatientId });
+                }
+            }
+            else
+            {
+                _context.Add(vaccineRegistree);
+                //await _context.SaveChangesAsync();
+                var PatientId = vaccineRegistree.PatientId;
+                return View(new { PatientId = PatientId });
+            }
+        }
+
+
+
+
         [HttpPost]
         public IActionResult ExportRegis()
         {
