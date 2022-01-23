@@ -27,7 +27,7 @@ namespace VaccineRegistration.Controllers
             {
                 _context.Add(answerModel);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(answerModel));
+                return RedirectToAction("Register", "Vaccination");
             }
             else
             {
