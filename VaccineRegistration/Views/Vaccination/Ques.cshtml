@@ -12,6 +12,8 @@
             <div class="card-body px-5">
                 <form asp-action="Ques">
 
+                    <input type="hidden" asp-for="PatientId" value="@Model.PatientId"/>
+
                     <div class="form-group row">
                         <label class="control-label font-weight-bold text-left">Do you have a history of severe allergies such as shortness of breath, swelling, urticaria all over the body, or other severe reactions to vaccines?</label>
                         <div class="form-check">

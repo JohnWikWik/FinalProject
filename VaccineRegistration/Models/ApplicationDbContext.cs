@@ -13,7 +13,15 @@ namespace VaccineRegistration.Models
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<VaccineRegistreeModel>().HasOne(v => v.AnswerModel).WithOne(a => a.VaccineRegistree).HasForeignKey<AnswerModel>(b => b.PatientId);
+        }
+
         public DbSet<VaccineRegistreeModel> Patient { get; set; }
         public DbSet<AnswerModel> Questionaire { get; set; }
+
+       
     }
 }

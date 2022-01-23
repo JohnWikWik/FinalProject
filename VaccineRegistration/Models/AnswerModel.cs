@@ -11,7 +11,7 @@ namespace VaccineRegistration.Models
         public int PatientId { get; set; }
 
         [ForeignKey("PatientId")]
-        public virtual VaccineRegistreeModel VaccineRegistree { get; set; }
+        public VaccineRegistreeModel VaccineRegistree { get; set; }
         [Required]
         public string isAllergies { get; set; }
         public string isAutoimmune { get; set; }

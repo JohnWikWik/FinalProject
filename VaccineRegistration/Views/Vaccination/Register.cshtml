@@ -3,6 +3,7 @@
     ViewData["Title"] = "Register Page";
 }
 
+@Html.HiddenFor(VaccineRegistration => VaccineRegistration.PatientId)
 
     <div class="row text-center">
         <div class="col-md-6 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
@@ -93,52 +94,53 @@
 
                                     <label asp-for="City" class="control-label font-weight-bold"></label>
 
-                                    <select asp-for="City" class="form-control" />
+                                   <select asp-for="City" class="form-control">
 
-                                    --> Jawa Barat
-                                    <option value="Bekasi">Bekasi</option>
-                                    <option value="Bandung">Bandung</option>
-                                    <option value="Depok">Depok</option>
-                                    <option value="Bogor">Bogor</option>
-                                    <option value="Tasikmalaya">Tasikmalaya</option>
-                                    <option value="Cimahi">Cimahi</option>
+                                
+                                        --> Jawa Barat
+                                        <option value="Bekasi">Bekasi</option>
+                                        <option value="Bandung">Bandung</option>
+                                        <option value="Depok">Depok</option>
+                                        <option value="Bogor">Bogor</option>
+                                        <option value="Tasikmalaya">Tasikmalaya</option>
+                                        <option value="Cimahi">Cimahi</option>
 
-                                    --> Jawa Timur
-                                    <option value="Surabaya">Surabaya</option>
-                                    <option value="Malang">Malang</option>
-                                    <option value="Kediri">Kediri</option>
-                                    <option value="Batu">Batu</option>
-                                    <option value="Pasuruan">Pasuruan</option>
-                                    <option value="Mojokerto">Mojokerto</option>
+                                        --> Jawa Timur
+                                        <option value="Surabaya">Surabaya</option>
+                                        <option value="Malang">Malang</option>
+                                        <option value="Kediri">Kediri</option>
+                                        <option value="Batu">Batu</option>
+                                        <option value="Pasuruan">Pasuruan</option>
+                                        <option value="Mojokerto">Mojokerto</option>
 
-                                    --> Jawa Tengah
-                                    <option value="Semarang">Semarang</option>
-                                    <option value="Surakarta">Surakarta</option>
-                                    <option value="Pekalongan">Pekalongan</option>
-                                    <option value="Tegal">Tegal</option>
-                                    <option value="Salatiga">Salatiga</option>
-                                    <option value="Magelang">Magelang</option>
+                                        --> Jawa Tengah
+                                        <option value="Semarang">Semarang</option>
+                                        <option value="Surakarta">Surakarta</option>
+                                        <option value="Pekalongan">Pekalongan</option>
+                                        <option value="Tegal">Tegal</option>
+                                        <option value="Salatiga">Salatiga</option>
+                                        <option value="Magelang">Magelang</option>
 
-                                    --> Sumatra Utara
-                                    <option value="Medan">Medan</option>
-                                    <option value="Pematangsiantar">Pematangsiantar</option>
-                                    <option value="Binjai">Binjai</option>
-                                    <option value="Padang Sidempuan">Padang Sidempuan</option>
-                                    <option value="Tebing Tinggi">Tebing Tinggi</option>
-                                    <option value="Tanjungbalai">Tanjungbalai</option>
+                                        --> Sumatra Utara
+                                        <option value="Medan">Medan</option>
+                                        <option value="Pematangsiantar">Pematangsiantar</option>
+                                        <option value="Binjai">Binjai</option>
+                                        <option value="Padang Sidempuan">Padang Sidempuan</option>
+                                        <option value="Tebing Tinggi">Tebing Tinggi</option>
+                                        <option value="Tanjungbalai">Tanjungbalai</option>
 
-                                    --> DKI JAKARTA
-                                    <option value="Jakarta Timur">Jakarta Timur</option>
-                                    <option value="Jakarta Barat">Jakarta Barat</option>
-                                    <option value="Jakarta Pusat">Jakarta Pusat</option>
-                                    <option value="Jakarta Selatan">Jakarta Selatan</option>
-                                    <option value="Jakarta Utara">Jakarta Utara</option>
+                                        --> DKI JAKARTA
+                                        <option value="Jakarta Timur">Jakarta Timur</option>
+                                        <option value="Jakarta Barat">Jakarta Barat</option>
+                                        <option value="Jakarta Pusat">Jakarta Pusat</option>
+                                        <option value="Jakarta Selatan">Jakarta Selatan</option>
+                                        <option value="Jakarta Utara">Jakarta Utara</option>
 
-                                    --> Banten
-                                    <option value="Tangerang">Tangerang</option>
-                                    <option value="Tangerang Selatan">Tangerang Selatan</option>
-                                    <option value="Serang">Serang</option>
-                                    <option value="Cilegon">Cilegon</option>
+                                        --> Banten
+                                        <option value="Tangerang">Tangerang</option>
+                                        <option value="Tangerang Selatan">Tangerang Selatan</option>
+                                        <option value="Serang">Serang</option>
+                                        <option value="Cilegon">Cilegon</option>
 
                                     </select>
 
