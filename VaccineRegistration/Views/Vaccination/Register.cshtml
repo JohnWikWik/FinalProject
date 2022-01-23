@@ -6,27 +6,27 @@
 @Html.HiddenFor(VaccineRegistration => VaccineRegistration.PatientId)
 
     <div class="row text-center">
-        <div class="col-md-6 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="col-md-5 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
             <div class="card">
                 <div class="card-header bg-primary text-white">
                     <h5>Vaccine Registration</h5>
                 </div>
-                <p class="text-secondary font-weight-bold mt-4">Page 1 of 2</p>
+                <p class="text-secondary fw-bold mt-4">Page 1 of 2</p>
                 <div class="card-body px-5">
                     <form asp-action="Register">
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
 
-                            <label asp-for="PatientName" class="control-label font-weight-bold">Patient Name</label>
+                            <label asp-for="PatientName" class="control-label text-start fw-bold text-start">Patient Name</label>
 
                             <input type="text" asp-for="PatientName" class="form-control" />
 
-                            <span asp-validation-for="PatientName" class="text-danger"></span>
+                            <span asp-validation-for="PatientName" class="text-danger text-start text-start"></span>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
 
-                            <label asp-for="PoB" class="control-label font-weight-bold">Place of Birth</label>
+                            <label asp-for="PoB" class="control-label text-start fw-bold">Place of Birth</label>
 
                             <select type="text" asp-for="PoB" class="form-control">
 
@@ -40,40 +40,40 @@
                             </select>
 
 
-                            <span asp-validation-for="PoB" class="text-danger"></span>
+                            <span asp-validation-for="PoB" class="text-danger text-start"></span>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
 
-                            <label asp-for="DoB" class="control-label font-weight-bold">Date of Birth</label>
+                            <label asp-for="DoB" class="control-label text-start fw-bold">Date of Birth</label>
 
                             <input type="date" asp-for="DoB" class="form-control" placeholder="11/10/2001"/>
 
-                            <span asp-validation-for="DoB" class="text-danger"></span>
+                            <span asp-validation-for="DoB" class="text-danger text-start"></span>
                         </div>
 
-                         <div class="form-group row">
+                         <div class="form-group row mb-3">
                             
-                                <label asp-for="NIK" class="control-label font-weight-bold">NIK</label>
+                                <label asp-for="NIK" class="control-label text-start fw-bold">NIK</label>
                             
                                 <input type="number" asp-for="NIK" class="form-control" placeholder="Enter 16-Digit NIK Number" />
                         
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
 
-                            <label asp-for="Address" class="control-label font-weight-bold"></label>
+                            <label asp-for="Address" class="control-label text-start fw-bold"></label>
 
                             <input type="text" asp-for="Address" class="form-control" placeholder="Enter Address" />
 
-                            <span asp-validation-for="Address" class="text-danger"></span>
+                            <span asp-validation-for="Address" class="text-danger text-start"></span>
                         </div>
 
                         <div class="row">
                             <div class="col">
-                                <div class="form-group row">
+                                <div class="form-group row mb-3">
 
-                                    <label asp-for="Province" class="control-label font-weight-bold"></label>
+                                    <label asp-for="Province" class="control-label text-start fw-bold"></label>
 
                                     <select asp-for="Province" class="form-control">
                                         
@@ -86,13 +86,13 @@
                                         
                                     </select>
                                     
-                                <span asp-validation-for="Province" class="text-danger"></span>
+                                <span asp-validation-for="Province" class="text-danger text-start"></span>
                                 </div>
                             </div>
-                            <div class="col ml-3">
-                                <div class="form-group row">
+                            <div class="col">
+                                <div class="form-group row mb-3">
 
-                                    <label asp-for="City" class="control-label font-weight-bold"></label>
+                                    <label asp-for="City" class="control-label text-start fw-bold"></label>
 
                                    <select asp-for="City" class="form-control">
 
@@ -144,16 +144,16 @@
 
                                     </select>
 
-                                    <span asp-validation-for="City" class="text-danger"></span>
+                                    <span asp-validation-for="City" class="text-danger text-start"></span>
                                 </div>
                             </div>
                         </div>
 
                         
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
 
-                            <label asp-for="VaccineType" class="control-label font-weight-bold">Vaccine Type</label>
+                            <label asp-for="VaccineType" class="control-label text-start fw-bold">Vaccine Type</label>
 
                             <select asp-for="VaccineType" class="form-control">
 
@@ -164,28 +164,28 @@
                             </select>
 
 
-                            <span asp-validation-for="VaccineType" class="text-danger"></span>
+                            <span asp-validation-for="VaccineType" class="text-danger text-start"></span>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
 
-                            <label asp-for="VaccineDose" class="control-label font-weight-bold">Vaccine Dose</label>
+                            <label asp-for="VaccineDose" class="control-label text-start fw-bold">Vaccine Dose</label>
 
                             <select asp-for="VaccineDose" class="form-control">
                                 <option value="1st Dose">1st Dose</option>
                                 <option value="2nd Dose">2nd Dose</option>
                             </select>
 
-                            <span asp-validation-for="VaccineDose" class="text-danger"></span>
+                            <span asp-validation-for="VaccineDose" class="text-danger text-start"></span>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-3">
 
-                            <label asp-for="VaccineDate" class="control-label font-weight-bold">Vaccine Date</label>
+                            <label asp-for="VaccineDate" class="control-label text-start fw-bold">Vaccine Date</label>
 
                             <input type="date" asp-for="VaccineDate" class="form-control" />
 
-                            <span asp-validation-for="VaccineDate" class="text-danger"></span>
+                            <span asp-validation-for="VaccineDate" class="text-danger text-start"></span>
                         </div>
 
                         <div class="form-group d-flex justify-content-end">
