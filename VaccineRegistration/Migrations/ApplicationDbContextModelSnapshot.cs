@@ -29,9 +29,6 @@ namespace VaccineRegistration.Migrations
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("VaccineRegistreeModelPatientId")
-                        .HasColumnType("int");
-
                     b.Property<string>("isAllergies")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -59,7 +56,8 @@ namespace VaccineRegistration.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("VaccineRegistreeModelPatientId");
+                    b.HasIndex("PatientId")
+                        .IsUnique();
 
                     b.ToTable("Questionaire");
                 });
@@ -115,24 +113,20 @@ namespace VaccineRegistration.Migrations
 
             modelBuilder.Entity("VaccineRegistration.Models.AnswerModel", b =>
                 {
-                    b.HasOne("VaccineRegistration.Models.VaccineRegistreeModel", "VaccineRegistreeModel")
-                        .WithMany("AnswerModel")
-                        .HasForeignKey("VaccineRegistreeModelPatientId");
+                    b.HasOne("VaccineRegistration.Models.VaccineRegistreeModel", "VaccineRegistree")
+                        .WithOne("AnswerModel")
+                        .HasForeignKey("VaccineRegistration.Models.AnswerModel", "PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("VaccineRegistreeModel");
+                    b.Navigation("VaccineRegistree");
                 });
 
             modelBuilder.Entity("VaccineRegistration.Models.VaccineRegistreeModel", b =>
                 {
-                    b.Property<int>("VaccineRegistreeModelPatientId");
-                    //b.Navigation("AnswerModel");
+                    b.Navigation("AnswerModel");
                 });
 #pragma warning restore 612, 618
-        }
-
-        private void Property<T>(string v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

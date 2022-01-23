@@ -10,7 +10,7 @@ using VaccineRegistration.Models;
 namespace VaccineRegistration.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220123055658_AddToDb")]
+    [Migration("20220122174853_AddToDb")]
     partial class AddToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,9 +29,6 @@ namespace VaccineRegistration.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("VaccineRegistreeModelPatientId")
                         .HasColumnType("int");
 
                     b.Property<string>("isAllergies")
@@ -61,7 +58,8 @@ namespace VaccineRegistration.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("VaccineRegistreeModelPatientId");
+                    b.HasIndex("PatientId")
+                        .IsUnique();
 
                     b.ToTable("Questionaire");
                 });
@@ -117,11 +115,13 @@ namespace VaccineRegistration.Migrations
 
             modelBuilder.Entity("VaccineRegistration.Models.AnswerModel", b =>
                 {
-                    b.HasOne("VaccineRegistration.Models.VaccineRegistreeModel", "VaccineRegistreeModel")
-                        .WithMany("AnswerModel")
-                        .HasForeignKey("VaccineRegistreeModelPatientId");
+                    b.HasOne("VaccineRegistration.Models.VaccineRegistreeModel", "VaccineRegistree")
+                        .WithOne("AnswerModel")
+                        .HasForeignKey("VaccineRegistration.Models.AnswerModel", "PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("VaccineRegistreeModel");
+                    b.Navigation("VaccineRegistree");
                 });
 
             modelBuilder.Entity("VaccineRegistration.Models.VaccineRegistreeModel", b =>

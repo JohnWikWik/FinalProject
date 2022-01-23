@@ -35,6 +35,7 @@ namespace VaccineRegistration.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    PatientId = table.Column<int>(type: "int", nullable: false),
                     isAllergies = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     isAutoimmune = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     isMedication = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -42,25 +43,24 @@ namespace VaccineRegistration.Migrations
                     isHeartdisease = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     isDiabetes = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     isHypertension = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    isCovid = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PatientId = table.Column<int>(type: "int", nullable: false),
-                    VaccineRegistreeModelPatientId = table.Column<int>(type: "int", nullable: true)
+                    isCovid = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Questionaire", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Questionaire_Patient_VaccineRegistreeModelPatientId",
-                        column: x => x.VaccineRegistreeModelPatientId,
+                        name: "FK_Questionaire_Patient_PatientId",
+                        column: x => x.PatientId,
                         principalTable: "Patient",
                         principalColumn: "PatientId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Questionaire_VaccineRegistreeModelPatientId",
+                name: "IX_Questionaire_PatientId",
                 table: "Questionaire",
-                column: "VaccineRegistreeModelPatientId");
+                column: "PatientId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

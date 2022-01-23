@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace VaccineRegistration.Models
@@ -43,7 +42,6 @@ namespace VaccineRegistration.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime VaccineDate { get; set; }
 
-        //public AnswerModel AnswerModel { get; set; }
-        public List<AnswerModel> AnswerModel { get; set;}
+        public AnswerModel AnswerModel { get; set; }
     }
 }
