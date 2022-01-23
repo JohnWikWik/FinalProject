@@ -36,7 +36,15 @@ namespace VaccineRegistration.Controllers
                 _context.Add(vaccineRegistree);
                 await _context.SaveChangesAsync();
                 var PatientId = vaccineRegistree.PatientId;
-                return RedirectToAction("Ques", new {PatientId = PatientId});
+                var VaccineDose = vaccineRegistree.VaccineDose;
+                if(VaccineDose.Equals("1st Dose"))
+                {
+                    return RedirectToAction("Ques", new { PatientId = PatientId });
+                }
+                else
+                {
+                    return RedirectToAction("Ques2", new { PatientId = PatientId });
+                }
             }
             else
             {
@@ -51,6 +59,12 @@ namespace VaccineRegistration.Controllers
             return View(answer);
         }
 
+        public IActionResult Ques2(int PatientId)
+        {
+            AnswerModel answer = new AnswerModel();
+            answer.PatientId = PatientId;
+            return View(answer);
+        }
 
         [HttpPost]
 

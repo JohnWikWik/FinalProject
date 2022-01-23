@@ -1,0 +1,116 @@
+﻿@model AnswerModel
+@{
+    ViewData["Title"] = "Register Page";
+}
+<div class="row text-center">
+    <div class="col-md-5 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5>Vaccine Registration</h5>
+            </div>
+            <p class="text-secondary fw-bold mt-4">Page 2 of 2</p>
+            <div class="card-body px-5">
+                <form asp-action="Ques">
+
+                    <input type="hidden" asp-for="PatientId" value="@Model.PatientId"/>
+
+                    <div class="form-group row mb-3">
+                        <label class="control-label fw-bold text-start text-left">Do you have a history of severe allergies after being vaccinated against COVID-19 before?</label>
+
+                        <div class="btn-group">
+                                <input asp-for="isAllergies" value="Yes" type="radio" class="btn-check" id="success-outlined" autocomplete="off" checked>
+                                <label asp-for="isAllergies" class="btn btn-outline-success" for="success-outlined">Yes</label>
+                                <input asp-for="isAllergies" value="No" type="radio" class="btn-check" id="danger-outlined" autocomplete="off">
+                                <label asp-for="isAllergies" class="btn btn-outline-danger" for="danger-outlined">No</label>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="control-label fw-bold text-start text-left">Do you have an autoimmune disease, such as lupus?</label>
+
+                        <div class="btn-group">
+                            <input asp-for="isAutoimmune" value="Yes" type="radio" class="btn-check" id="success-outlined2" autocomplete="off" checked>
+                            <label asp-for="isAutoimmune" class="btn btn-outline-success" for="success-outlined2">Yes</label>
+                            <input asp-for="isAutoimmune" value="No" type="radio" class="btn-check" id="danger-outlined2" autocomplete="off">
+                            <label asp-for="isAutoimmune" class="btn btn-outline-danger" for="danger-outlined2">No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="control-label fw-bold text-start text-left">
+                            Are you on medication for blood clotting disorders, blood disorders,
+                            immune deficiencies, and receiving blood products/transfusions?
+                        </label>
+
+                        <div class="btn-group">
+                            <input asp-for="isMedication" value="Yes" type="radio" class="btn-check" id="success-outlined3" autocomplete="off" checked>
+                            <label asp-for="isMedication" class="btn btn-outline-success" for="success-outlined3">Yes</label>
+                            <input asp-for="isMedication" value="No" type="radio" class="btn-check" id="danger-outlined3" autocomplete="off">
+                            <label asp-for="isMedication" class="btn btn-outline-danger" for="danger-outlined3">No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="control-label fw-bold text-start text-left">Are you currently receiving immunosuppressant treatment such as corticosteroids and chemotherapy?</label>
+                        <div class="btn-group">
+                            <input asp-for="isImmunosuppressant" value="Yes" type="radio" class="btn-check" id="success-outlined4" autocomplete="off" checked>
+                            <label asp-for="isImmunosuppressant" class="btn btn-outline-success" for="success-outlined4">Yes</label>
+                            <input asp-for="isImmunosuppressant" value="No" type="radio" class="btn-check" id="danger-outlined4" autocomplete="off">
+                            <label asp-for="isImmunosuppressant" class="btn btn-outline-danger" for="danger-outlined4">No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="control-label fw-bold text-start text-left">
+                            Do you have severe heart disease or asthma in a state of shortness of
+                            breath?
+                        </label>
+                        <div class="btn-group">
+                            <input asp-for="isHeartdisease" value="Yes" type="radio" class="btn-check" id="success-outlined5" autocomplete="off" checked>
+                            <label asp-for="isHeartdisease" class="btn btn-outline-success" for="success-outlined5">Yes</label>
+                            <input asp-for="isHeartdisease" value="No" type="radio" class="btn-check" id="danger-outlined5" autocomplete="off">
+                            <label asp-for="isHeartdisease" class="btn btn-outline-danger" for="danger-outlined5">No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="control-label fw-bold text-start text-left">Do you have a history of diabetes?</label>
+                        <div class="btn-group">
+                            <input asp-for="isDiabetes" value="Yes" type="radio" class="btn-check" id="success-outlined6" autocomplete="off" checked>
+                            <label asp-for="isDiabetes" class="btn btn-outline-success" for="success-outlined6">Yes</label>
+                            <input asp-for="isDiabetes" value="No" type="radio" class="btn-check" id="danger-outlined6" autocomplete="off">
+                            <label asp-for="isDiabetes" class="btn btn-outline-danger" for="danger-outlined6">No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="control-label fw-bold text-start text-left">Do you have a history of hypertension?</label>
+                        <div class="btn-group">
+                            <input asp-for="isHypertension" value="Yes" type="radio" class="btn-check" id="success-outlined7" autocomplete="off" checked>
+                            <label asp-for="isHypertension" class="btn btn-outline-success" for="success-outlined7">Yes</label>
+                            <input asp-for="isHypertension" value="No" type="radio" class="btn-check" id="danger-outlined7" autocomplete="off">
+                            <label asp-for="isHypertension" class="btn btn-outline-danger" for="danger-outlined7">No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="control-label fw-bold text-start text-left">Have you ever been confirmed to have COVID-19?</label>
+                        <div class="btn-group">
+                            <input asp-for="isCovid" value="Yes" type="radio" class="btn-check" id="success-outlined8" autocomplete="off" checked>
+                            <label asp-for="isCovid" class="btn btn-outline-success" for="success-outlined8">Yes</label>
+                            <input asp-for="isCovid" value="No" type="radio" class="btn-check" id="danger-outlined8" autocomplete="off">
+                            <label asp-for="isCovid" class="btn btn-outline-danger" for="danger-outlined8">No</label>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="form-group d-flex justify-content-end">
+                        <input type="submit" value="Ques" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
