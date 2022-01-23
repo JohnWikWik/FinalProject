@@ -27,9 +27,19 @@
                          <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Vaccination" asp-action="Register">Vaccination Registration</a>
                         </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Vaccination" asp-action="Register2">Vaccination Registration</a>
+                        
+                        <li class="nav-item">
+                            <form method="post" asp-controller="Vaccination" asp-action="ExportRegis">
+                                <input type="submit" value="Export Register"/>
+                            </form>
                         </li>
+
+                        <li class="nav-item">
+                            <form method="post" asp-controller="Vaccination" asp-action="ExportQues">
+                                <input type="submit" value="Export Quesioner"/>
+                            </form>
+                        </li>
+
                     </ul>
                 </div>
             </div>

@@ -2,6 +2,14 @@
 using System.Threading.Tasks;
 using VaccineRegistration.Models;
 
+
+using System.IO;
+using System.Data;
+using System.Linq;
+using ClosedXML.Excel;
+using Microsoft.AspNetCore.Mvc;
+
+
 namespace VaccineRegistration.Controllers
 {
     public class VaccinationController : Controller
@@ -60,5 +68,87 @@ namespace VaccineRegistration.Controllers
                 return View();
             }
         }
+
+
+        [HttpPost]
+        public IActionResult ExportRegis()
+        {
+            DataTable regis = new DataTable("Grid");
+            regis.Columns.AddRange(new DataColumn[] {
+                new DataColumn("PatientId"),
+                new DataColumn("PatientName"),
+                new DataColumn("PoB"),
+                new DataColumn("DoB"),
+                new DataColumn("NIK"),
+                new DataColumn("Address"),
+                new DataColumn("Province"),
+                new DataColumn("City"),
+                new DataColumn("VaccineType"),
+                new DataColumn("VaccineDose"),
+                new DataColumn("VaccineDate")
+            });
+
+            var patients = from patient in _context.Patient.Take(10) select patient;
+
+            foreach (var patient in patients)
+            {
+                regis.Rows.Add(patient.PatientId, patient.PatientName, patient.PoB, patient.DoB, patient.NIK
+                    , patient.Address, patient.Province, patient.City, patient.VaccineType
+                    , patient.VaccineDose, patient.VaccineDate);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(regis);
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Registration.xlsx");
+                }
+            }
+        }
+
+
+        [HttpPost]
+        public IActionResult ExportQues()
+        {
+            {
+                DataTable ques = new DataTable("Grid");
+                ques.Columns.AddRange(new DataColumn[] {
+                new DataColumn("Id"),
+                new DataColumn("PatientId"),
+                new DataColumn("isAllergies"),
+                new DataColumn("isAutoimmune"),
+                new DataColumn("isMedication"),
+                new DataColumn("isImmunosuppressant"),
+                new DataColumn("isHeartdisease"),
+                new DataColumn("isDiabetes"),
+                new DataColumn("isHypertension"),
+                new DataColumn("isCovid")
+                
+            });
+
+                var questions = from question in _context.Questionaire.Take(10) select question;
+
+                foreach (var question in questions)
+                {
+                    ques.Rows.Add(question.Id, question.PatientId, question.isAllergies, question.isAutoimmune, question.isMedication
+                        , question.isImmunosuppressant, question.isHeartdisease, question.isDiabetes, question.isHypertension
+                        , question.isCovid);
+                }
+
+                using (XLWorkbook wb = new XLWorkbook())
+                {
+                    wb.Worksheets.Add(ques);
+                    using (MemoryStream stream = new MemoryStream())
+                    {
+                        wb.SaveAs(stream);
+                        return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Quesioner.xlsx");
+                    }
+                }
+            }
+        }
+
+
     }
 }
