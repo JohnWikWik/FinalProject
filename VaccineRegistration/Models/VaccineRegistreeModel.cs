@@ -17,6 +17,7 @@ namespace VaccineRegistration.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/mm/yyyy}")]
+        [DobValidation(5, ErrorMessage = "Must be older than 5")]
         public DateTime DoB { get; set; }
 
         [Required(ErrorMessage = "NIK Must Be Numeric and 16-Digit")]
@@ -37,8 +38,9 @@ namespace VaccineRegistration.Models
         [Required]
         public string VaccineDose { get; set; }
 
-
+        
         [DataType(DataType.Date)]
+        
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime VaccineDate { get; set; }
 
