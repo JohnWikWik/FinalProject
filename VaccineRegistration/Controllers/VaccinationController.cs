@@ -21,23 +21,41 @@ namespace VaccineRegistration.Controllers
             _context = context;
         }
 
-        public IActionResult Register()
+        public IActionResult Register(int PatientId = 0)
         {
-            return View();
+            VaccineRegistreeModel  regis = new VaccineRegistreeModel();
+            if(PatientId == 0)
+            {
+                return View(regis);
+            }
+            else
+            {
+                regis = _context.Patient.Where(_context => _context.PatientId == PatientId).FirstOrDefault();
+                return View(regis);
+            }
         }
      
         [HttpPost]
 
         public async Task<IActionResult> Register([Bind("PatientId, PatientName, PoB, DoB, NIK, Address, Province, City, VaccineType, VaccineDose, VaccineDate")] VaccineRegistreeModel vaccineRegistree)
         {
-           
+
+
             if (ModelState.IsValid)
             {
-                _context.Add(vaccineRegistree);
-                await _context.SaveChangesAsync();
+                if (vaccineRegistree.PatientId != 0)
+                {
+                    _context.Update(vaccineRegistree);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    _context.Add(vaccineRegistree);
+                    await _context.SaveChangesAsync();
+                }
                 var PatientId = vaccineRegistree.PatientId;
                 var VaccineDose = vaccineRegistree.VaccineDose;
-                if(VaccineDose.Equals("1st Dose"))
+                if (VaccineDose.Equals("1st Dose"))
                 {
                     return RedirectToAction("Ques", new { PatientId = PatientId });
                 }
@@ -88,20 +106,20 @@ namespace VaccineRegistration.Controllers
         public async Task<IActionResult> BackButton([Bind("Id, PatientId, isAllergies, isAutoimmune, isMedication, isImmunosuppressant, isHeartdisease, isDiabetes, isHypertension, isCovid")] AnswerModel answerModel)
         {
             _context.Add(answerModel);
-                //await _context.SaveChangesAsync();
             var PatientId = answerModel.PatientId;
-            return RedirectToAction("RegisterUpdate", new { PatientId = PatientId });
+            return RedirectToAction("Register", new { PatientId = PatientId });
         }
 
+        /*
         public IActionResult RegisterUpdate(int PatientId)
         {
             VaccineRegistreeModel regis = new VaccineRegistreeModel();
             regis.PatientId = PatientId;
             return View(regis);
         }
+        */
 
-
-
+        /*
         [HttpPost]
 
         public async Task<IActionResult> UpdateData([Bind("PatientId, PatientName, PoB, DoB, NIK, Address, Province, City, VaccineType, VaccineDose, VaccineDate")] VaccineRegistreeModel vaccineRegistree)
@@ -130,7 +148,7 @@ namespace VaccineRegistration.Controllers
                 return View(new { PatientId = PatientId });
             }
         }
-
+        */
 
 
 
