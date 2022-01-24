@@ -3,8 +3,6 @@
     ViewData["Title"] = "Register Page";
 }
 
-@Html.HiddenFor(VaccineRegistration => VaccineRegistration.PatientId)
-
     <div class="row text-center">
         <div class="col-md-5 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
             <div class="card">
@@ -15,11 +13,13 @@
                 <div class="card-body px-5">
                     <form asp-action="Register">
 
+                        <input type="hidden" asp-for="PatientId" value="@Model.PatientId"  />
+
                         <div class="form-group row mb-3">
 
                             <label asp-for="PatientName" class="control-label text-start fw-bold text-start">Patient Name</label>
 
-                            <input type="text" asp-for="PatientName" class="form-control" />
+                            <input type="text" asp-for="PatientName" value="@Model.PatientName" class="form-control" />
 
                             <span asp-validation-for="PatientName" class="text-danger text-start text-start"></span>
                         </div>
@@ -28,7 +28,7 @@
 
                             <label asp-for="PoB" class="control-label text-start fw-bold">Place of Birth</label>
 
-                            <select type="text" asp-for="PoB" class="form-control">
+                            <select type="text" asp-for="PoB" value="@Model.PoB"  class="form-control">
 
                                         <option value="DKI Jakarta">DKI Jakarta</option>
                                         <option value="Jawa Barat">Jawa Barat</option>
@@ -47,7 +47,7 @@
 
                             <label asp-for="DoB" class="control-label text-start fw-bold">Date of Birth</label>
 
-                            <input type="date" asp-for="DoB" class="form-control" placeholder="11/10/2001"/>
+                            <input type="date" asp-for="DoB" value="@Model.DoB" class="form-control" placeholder="11/10/2001"/>
 
                             <span asp-validation-for="DoB" class="text-danger text-start"></span>
                         </div>
@@ -56,7 +56,7 @@
                             
                                 <label asp-for="NIK" class="control-label text-start fw-bold">NIK</label>
                             
-                                <input type="number" asp-for="NIK" class="form-control" placeholder="Enter 16-Digit NIK Number" />
+                                <input type="number" asp-for="NIK" value="@Model.NIK" class="form-control" placeholder="Enter 16-Digit NIK Number" />
                         
                         </div>
 
@@ -64,7 +64,7 @@
 
                             <label asp-for="Address" class="control-label text-start fw-bold"></label>
 
-                            <input type="text" asp-for="Address" class="form-control" placeholder="Enter Address" />
+                            <input type="text" asp-for="Address" value="@Model.Address" class="form-control" placeholder="Enter Address" />
 
                             <span asp-validation-for="Address" class="text-danger text-start"></span>
                         </div>
@@ -75,7 +75,7 @@
 
                                     <label asp-for="Province" class="control-label text-start fw-bold"></label>
 
-                                    <select asp-for="Province" class="form-control">
+                                    <select asp-for="Province" value="@Model.Province" class="form-control">
                                         
                                         <option value="DKI Jakarta">DKI Jakarta</option>
                                         <option value="Jawa Barat">Jawa Barat</option>
@@ -94,7 +94,7 @@
 
                                     <label asp-for="City" class="control-label text-start fw-bold"></label>
 
-                                   <select asp-for="City" class="form-control">
+                                   <select asp-for="City" value="@Model.City" class="form-control">
 
                                         --> DKI JAKARTA
                                         <option value="Jakarta Timur">Jakarta Timur</option>
@@ -156,7 +156,7 @@
 
                             <label asp-for="VaccineType" class="control-label text-start fw-bold">Vaccine Type</label>
 
-                            <select asp-for="VaccineType" class="form-control">
+                            <select asp-for="VaccineType" value="@Model.VaccineType" class="form-control">
 
                                 <option value="Sinovac">Sinovac</option>
                                 <option value="Astra Zeneca">Astra Zeneca</option>
@@ -179,7 +179,7 @@
 
                             <label asp-for="VaccineDose" class="control-label text-start fw-bold">Vaccine Dose</label>
 
-                            <select asp-for="VaccineDose" class="form-control">
+                            <select asp-for="VaccineDose" value="@Model.VaccineDose" class="form-control">
                                 <option value="1st Dose">1st Dose</option>
                                 <option value="2nd Dose">2nd Dose</option>
                             </select>
@@ -191,7 +191,7 @@
 
                             <label asp-for="VaccineDate" class="control-label text-start fw-bold">Vaccine Date</label>
 
-                            <input type="date" asp-for="VaccineDate" class="form-control" />
+                            <input type="date" asp-for="VaccineDate" value="@Model.VaccineDate" class="form-control" />
 
                             <span asp-validation-for="VaccineDate" class="text-danger text-start"></span>
                         </div>
