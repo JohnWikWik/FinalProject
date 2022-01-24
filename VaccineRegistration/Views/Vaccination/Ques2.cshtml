@@ -106,15 +106,18 @@
 
                     
 
-                    <div class="form-group d-flex justify-content-end">
-                        <input type="submit" value="Ques" class="btn btn-primary" />
-                    </div>
-                </form>
+                    <div>
+						<div style="float:right;">
+							<input type="submit" value="Submit" class="btn btn-primary" />
+						</div>
 
-                <form asp-action="BackButton">
-                        <input type="hidden" asp-for="PatientId" value="@Model.PatientId"/>
-                        <input type="submit" value="back"/>
-                </form>
+						<div style="float:left;">
+							</form>
+								<form asp-action="BackButton">
+								<input type="hidden" asp-for="PatientId" value="@Model.PatientId" />
+								<input type="submit" class="btn btn-warning" value="< Back" style="color:white"/>
+							</form>
+					</div>
             </div>
         </div>
     </div>
