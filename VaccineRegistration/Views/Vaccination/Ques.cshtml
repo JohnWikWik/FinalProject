@@ -5,12 +5,12 @@
 <div class="row text-center">
 	<div class="col-md-5 mx-auto shadow-sm p-3 mb-5 bg-white rounded">
 		<div class="card">
-			<div class="card-header bg-primary text-white">
+			<div class="card-header" style="background-color: skyblue; color: black;">
 				<h5>Vaccine Registration</h5>
 			</div>
 			<p class="text-secondary fw-bold mt-4">Page 2 of 2</p>
 			<div class="card-body px-5">
-				<form asp-action="Ques">
+				<form asp-action="Ques"> 
 
 					<input type="hidden" asp-for="PatientId" value="@Model.PatientId" />
 
@@ -107,23 +107,18 @@
 
 					<div>
 						<div style="float:right;">
-							<input type="submit" value="Submit" class="btn btn-primary" />
+							<input type="submit" value="Finish" class="btn" style="color:black; background-color: skyblue;"/>
 						</div>
 
 						<div style="float:left;">
-							</form>
+			</form>
 								<form asp-action="BackButton">
 								<input type="hidden" asp-for="PatientId" value="@Model.PatientId" />
-								<input type="submit" class="btn btn-warning" value="< Back" style="color:white"/>
+								<input type="submit" class="btn" value="< Previous" style="color:black; background-color: skyblue;"/>
 							</form>
 					</div>
-
+				</div>
+			</div>
 		</div>
-
-
-
-
 	</div>
-</div>
-</div>
 </div>

@@ -66,7 +66,7 @@ namespace VaccineRegistration.Controllers
             }
             else
             {
-                return View();
+                return View(new VaccineRegistreeModel());
             }
         }
 

@@ -15,7 +15,7 @@ namespace VaccineRegistration.Models
         [Required(ErrorMessage = "Place of Birth Name is required.")]
         public string PoB { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date, ErrorMessage = "Date of Birth must be filled")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/mm/yyyy}")]
         [DobValidation(5, ErrorMessage = "Must be older than 5")]
         public DateTime DoB { get; set; }
@@ -42,6 +42,7 @@ namespace VaccineRegistration.Models
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         [IsGreaterDate(ErrorMessage = "Vaccine date must be greater than current date")]
+        [Required(ErrorMessage = "Vaccine Date must be filled")]
         public DateTime VaccineDate { get; set; }
 
         public AnswerModel AnswerModel { get; set; }
